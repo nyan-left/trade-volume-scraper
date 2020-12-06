@@ -15,7 +15,7 @@ interface Item  {
     day180 : { trend : string, change : string},
 };
 
-const getItemDetails = async(itemId : number) : Promise<Item> => {
+export const getItemDetails = async(itemId : number) : Promise<Item> => {
     const json = await axios.get(`http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=${itemId}`);
     const item = json.data.item as unknown as Item;
     
@@ -23,4 +23,3 @@ const getItemDetails = async(itemId : number) : Promise<Item> => {
 }
 
 
-export default getItemDetails;

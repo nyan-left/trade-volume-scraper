@@ -1,5 +1,5 @@
 import axios from 'axios';
-import getItemDetails from './officialAPI/getItemDetails';
+import {getItemDetails} from './officialAPI/getItemDetails';
 import * as UserAgent from 'user-agents';
 
 function getItemUrl(ID: number, item_name: string): string {
