@@ -1,4 +1,4 @@
-enum items {
+export enum ITEMS_LIST {
   "Cannonball" = 2,
   "Cannon_base" = 6,
   "Cannon_stand" = 8,

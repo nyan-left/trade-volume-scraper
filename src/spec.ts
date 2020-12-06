@@ -1,7 +1,7 @@
 export type Data = {
     date: Date,
-    price: Number,
-    tradeVolume: Number
+    price: number,
+    tradeVolume: number
 }
 
 interface Item {
@@ -9,3 +9,4 @@ interface Item {
     members: boolean,
     properties: Data[]
 }
+
