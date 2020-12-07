@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { fetchFromOfficialAPI } from './API/official';
+import { officialAPI } from './API/official';
 import * as UserAgent from 'user-agents';
 import { Day, FullItemData, OfficialAPIItem } from './spec';
 import * as moment from 'moment';
@@ -48,7 +48,7 @@ function parseHTML(html: string): Day[] {
 }
 
 export const getTradeVolume = async (id: number): Promise<FullItemData> => {
-  const item = await fetchFromOfficialAPI(id);
+  const item = await officialAPI(id);
   const url = getItemUrl(item.id, item.name);
   const userAgent = new UserAgent();
   const rawHTML = (
