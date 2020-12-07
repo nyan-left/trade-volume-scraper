@@ -1,21 +1,41 @@
-/* eslint-disable jest/no-done-callback */
-/* eslint-disable jest/expect-expect */
-
 import * as API from '../src/index';
 import * as chai from 'chai';
 
-
 describe('#Official API', () => {
   it('item 4151 resolves name Abyssal whip', async () => {
-    const itemData = await API.getItemDetails(4151);
+    const itemData = await API.fetchFromOfficialAPI(
+      API.ITEMS_LIST.Abyssal_whip,
+    );
     chai.expect(itemData.name).to.equal('Abyssal whip');
-  })
+  });
 });
 
+describe('#getTradeVolume API', () => {
+  it('resolves 300 days of data', async () => {
+    const data = await API.getTradeVolume(4151);
+    chai.expect(data.timeseries).to.be.length(300);
+  });
+});
 
 describe('#getTradeVolume API', () => {
-  it('resolves trade average data', async () => {
+  it('contains the correct keys', async () => {
     const tradeData = await API.getTradeVolume(4151);
-    chai.expect(tradeData).to.contain.keys(['trade', 'average']);
-  })
+
+    chai // todo - this should be dynamic
+      .expect(tradeData.timeseries[0])
+      .to.contain.keys(
+        'tradeVolume',
+        'priceDaily',
+        'priceAverage',
+        'dateString',
+        'date',
+      );
+  });
+});
+
+describe('#2007hq API', () => {
+  it('resolves', async () => {
+    const tradeData = await API.fetchFrom2007HQ(4151);
+    chai.expect(tradeData).to.have.length;
+  });
 });
