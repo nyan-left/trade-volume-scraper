@@ -20,6 +20,7 @@
     "CHANGELOG.md",
     "build/**/*"
   ],
+  "repository": "https://github.com/nyan-left/trade-volume-scrape",
   "author": "nyan-left",
   "license": "MIT",
   "devDependencies": {

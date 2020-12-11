@@ -14,3 +14,4 @@ All notable changes to this project will be documented in this file.
 - Updated dependencies.
 - Removed travis ci.
 - Removed `2007HQ` key from `getTradeVolume`.
+- Added repo url to `package.json`
