@@ -26,8 +26,6 @@ import * as OSRS from 'osrs-trade-stats';
     - [Official OSRS API](#official-osrs-api)
     - [Long term trade data (2007HQ API)](#long-term-trade-data-2007hq-api)
 
-<!-- Added by: deim, at: Fri 11 Dec 2020 00:34:16 GMT -->
-
 <!--te-->
 
 # Usage
