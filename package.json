@@ -5,6 +5,8 @@
   "engines": {
     "node": ">= 14.15 <15"
   },
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "devDependencies": {
     "@types/expect": "^24.3.0",
     "@types/mocha": "^8.0.4",
@@ -27,6 +29,11 @@
     "lint": "eslint . --ext .ts,.tsx",
     "test": "ts-mocha -p tsconfig.json tests/test.ts --timeout 10000"
   },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "build/**/*"
+  ],
   "author": "nyan-left",
   "license": "MIT",
   "dependencies": {
