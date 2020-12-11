@@ -1,6 +1,6 @@
 {
   "name": "osrs-trade-stats",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple, typed scraper of Old School RuneScape grand exchange. Includes daily trade volume data.",
   "engines": {
     "node": ">= 14.15 <15"
