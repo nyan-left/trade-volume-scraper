@@ -60,8 +60,5 @@ export const getTradeVolume = async (id: number): Promise<FullItemData> => {
   ).data;
   const tradeVolume = parseHTML(rawHTML);
 
-  return {
-    API_OSRS: { ...item },
-    timeseries: tradeVolume,
-  };
+  return tradeVolume;
 };

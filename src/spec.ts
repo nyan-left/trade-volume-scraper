@@ -21,10 +21,7 @@ export type Day = {
   priceDaily: number;
 };
 
-export type FullItemData = {
-  API_OSRS: OfficialAPIItem;
-  timeseries: Day[];
-};
+export type FullItemData = Day[];
 
 export type HQ2007Prices = {
   prices: [Date, number][];

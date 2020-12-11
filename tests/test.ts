@@ -11,15 +11,15 @@ describe('#Official API', () => {
 describe('#getTradeVolume API', () => {
   it('resolves 180 days of data', async () => {
     const data = await API.getTradeVolume(4151);
-    chai.expect(data.timeseries).to.be.length(180);
+    chai.expect(data).to.be.length(180);
   });
 });
 
 describe('#getTradeVolume API', () => {
   it('contains the correct keys', async () => {
     const tradeData = await API.getTradeVolume(4151);
-    chai // todo - this should be dynamic
-      .expect(tradeData.timeseries[0])
+    chai
+      .expect(tradeData[0])
       .to.contain.keys(
         'tradeVolume',
         'priceDaily',
