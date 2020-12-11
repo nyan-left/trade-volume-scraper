@@ -11,7 +11,7 @@ describe('#Official API', () => {
 describe('#getTradeVolume API', () => {
   it('resolves 300 days of data', async () => {
     const data = await API.getTradeVolume(4151);
-    chai.expect(data.timeseries).to.be.length(300);
+    chai.expect(data.timeseries).to.be.length.above(290);
   });
 });
 

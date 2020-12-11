@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { officialAPI } from './API/official';
 import * as UserAgent from 'user-agents';
-import { Day, FullItemData, OfficialAPIItem } from './spec';
+import { Day, FullItemData } from './spec';
 import * as moment from 'moment';
 
 function getItemUrl(ID: number, item_name: string): string {
