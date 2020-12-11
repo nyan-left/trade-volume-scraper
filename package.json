@@ -1,5 +1,5 @@
 {
-  "name": "osrs-trade-volume",
+  "name": "osrs-trade-stats",
   "version": "0.0.0",
   "description": "A simple, typed scraper of Old School RuneScape grand exchange. Includes daily trade volume data.",
   "engines": {
