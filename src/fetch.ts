@@ -30,8 +30,8 @@ function parseHTML(html: string): Day[] {
   );
   // date daily average
 
-  volume.sort((a: any, b: any) => a[0] - b[0]);
-  average.sort((a: any, b: any) => a[0] - b[0]);
+  volume.sort((a: unknown, b: unknown) => a[0] - b[0]);
+  average.sort((a: unknown, b: unknown) => a[0] - b[0]);
   const data: Day[] = [];
 
   for (let i = 0; i < volume.length; i++) {

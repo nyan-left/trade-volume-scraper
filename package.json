@@ -26,7 +26,7 @@
     "clean": "rimraf coverage build tmp",
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint ./src --ext .ts,.tsx",
     "test": "ts-mocha -p tsconfig.json tests/test.ts --timeout 10000"
   },
   "files": [
