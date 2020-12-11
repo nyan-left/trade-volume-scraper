@@ -28,7 +28,7 @@
     "test": "ts-mocha -p tsconfig.json tests/test.ts --timeout 10000"
   },
   "author": "nyan-;eft",
-  "license": "wtfpl",
+  "license": "MIT",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/chai": "^4.2.14",
