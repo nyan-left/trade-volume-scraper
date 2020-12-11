@@ -45,7 +45,7 @@ console.log(OSRS.ITEMS_LIST.Abyssal_whip); // 4151
 ### Trade Volume Data (OSRS's grand exchange graphs)
 
 (Not available on the official OSRS API)
-This will return the last 300 days of trade data available on the official website.
+This will return the last 180 days of trade data available on the official website.
 
 ```ts
 const data = await OSRS.getTradeVolume(4151);

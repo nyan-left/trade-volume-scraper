@@ -3,7 +3,7 @@ import { officialAPI } from './API/official';
 import * as UserAgent from 'user-agents';
 import { Day, FullItemData } from './spec';
 import * as moment from 'moment';
-
+import * as _ from 'lodash';
 function getItemUrl(ID: number, item_name: string): string {
   item_name = item_name.replace(' ', '+');
   return `http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
@@ -23,17 +23,21 @@ function parseHTML(html: string): Day[] {
   // todo - validate eval
   eval(items);
 
-  const volume: [Date, number][] = trade30.concat(trade90, trade180);
-  const average: [Date, number, number][] = average30.concat(
+  let volume: [Date, number][] = trade30.concat(trade90, trade180);
+  let average: [Date, number, number][] = average30.concat(
     average90,
     average180,
   );
-  // date daily average
 
-  volume.sort((a: unknown, b: unknown) => a[0] - b[0]);
-  average.sort((a: unknown, b: unknown) => a[0] - b[0]);
+  volume = _.uniqBy(volume, (v) => {
+    return v[0].toString();
+  }).sort((a: unknown, b: unknown) => a[0] - b[0]);
+
+  average = _.uniqBy(average, (v) => {
+    return v[0].toString();
+  }).sort((a: unknown, b: unknown) => a[0] - b[0]);
+
   const data: Day[] = [];
-
   for (let i = 0; i < volume.length; i++) {
     data.push({
       tradeVolume: volume[i][1],
@@ -61,6 +65,3 @@ export const getTradeVolume = async (id: number): Promise<FullItemData> => {
     timeseries: tradeVolume,
   };
 };
-
-// const createItemDetailUrl = (itemId) => `http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=${itemId}`;
-// const createItemGraphUrl = (itemId) => `http://services.runescape.com/m=itemdb_oldschool/api/graph/${itemId}.json`;

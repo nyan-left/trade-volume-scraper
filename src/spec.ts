@@ -23,7 +23,6 @@ export type Day = {
 
 export type FullItemData = {
   API_OSRS: OfficialAPIItem;
-  API_2007HQ?: unknown;
   timeseries: Day[];
 };
 
