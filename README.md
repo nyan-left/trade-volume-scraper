@@ -40,8 +40,8 @@ console.log(OSRS.ITEMS_LIST.Abyssal_whip);
 
 output:
 
-```ts
-4151;
+```
+4151
 ```
 
 ## Getting Data
@@ -91,7 +91,7 @@ Output:
 Bare bones OSRS API that is publicly available.
 
 ```ts
-const itemData = await OSRS.officialAPI(OSRS.ITEMS_LIST.Abyssal_whip);
+const itemData = await OSRS.getFromOfficialAPI(OSRS.ITEMS_LIST.Abyssal_whip);
 console.log(itemData);
 ```
 
@@ -117,10 +117,10 @@ Output:
 
 ### Long term trade data (2007HQ API)
 
-This library does not contain trade volume data older than the last 300 days. It can however, fetch long term daily and average item prices from 2007HQ's API.
+This library does not contain trade volume data older than the last 180 days. It can however, fetch long term daily and average item prices from 2007HQ's API.
 
 ```ts
-const tradeData = await OSRS.hq2007API(4151);
+const tradeData = await OSRS.getFrom2007HQ(4151);
 console.log(tradeData);
 ```
 

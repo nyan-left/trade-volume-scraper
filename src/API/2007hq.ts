@@ -1,10 +1,10 @@
 import axios from 'axios';
 import * as moment from 'moment';
 import { HQ2007Prices, HQData } from '../spec';
-import { officialAPI } from './official';
+import { getFromOfficialAPI } from '../index';
 
-export const hq2007API = async (itemID: number): Promise<HQData[]> => {
-  const itemDetails = await officialAPI(itemID);
+const hq2007API = async (itemID: number): Promise<HQData[]> => {
+  const itemDetails = await getFromOfficialAPI(itemID);
   itemDetails.name.replace('_', '-');
   itemDetails.name.toLowerCase();
   // todo - more edge cases
@@ -27,3 +27,4 @@ export const hq2007API = async (itemID: number): Promise<HQData[]> => {
 
   return data;
 };
+export default hq2007API;

@@ -1,12 +1,11 @@
 {
   "singleQuote": true,
   "trailingComma": "all",
-  "overrides": [
-    {
-      "files": "*.ts",
-      "options": {
-        "parser": "typescript"
-      }
+  "overrides": [{
+    "files": "*.ts",
+    "options": {
+      "parser": "typescript",
+      "prettier.printWidth": 140
     }
-  ]
+  }]
 }

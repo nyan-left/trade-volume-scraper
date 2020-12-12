@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { OfficialAPIItem } from '../spec';
 
-export const officialAPI = async (itemId: number): Promise<OfficialAPIItem> => {
+const officialAPI = async (itemId: number): Promise<OfficialAPIItem> => {
   const json = await axios.get(
     `http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=${itemId}`,
   );
@@ -9,3 +9,5 @@ export const officialAPI = async (itemId: number): Promise<OfficialAPIItem> => {
 
   return item;
 };
+
+export default officialAPI;
