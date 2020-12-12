@@ -20,6 +20,18 @@
     "CHANGELOG.md",
     "build/**/*"
   ],
+  "keywords": [
+    "osrs",
+    "oldschool",
+    "runescape",
+    "grand",
+    "exchange",
+    "trade",
+    "volume",
+    "ge",
+    "grandexchange",
+    "api"
+  ],
   "repository": "https://github.com/nyan-left/trade-volume-scrape",
   "author": "nyan-left",
   "license": "MIT",
