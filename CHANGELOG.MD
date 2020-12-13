@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.7] - 2020-12-13
+
+### Added
+
+- Missing `axios` dependency
+
 ## [0.0.4] - 2020-12-12
 
 ### Added
