@@ -32,7 +32,8 @@
     "grandexchange",
     "api"
   ],
-  "repository": "https://github.com/nyan-left/trade-volume-scrape",
+  "repository": "https://github.com/nyan-left/trade-volume-scraper",
+  "homepage": "https://github.com/nyan-left/trade-volume-scraper",
   "author": "nyan-left",
   "license": "MIT",
   "devDependencies": {
@@ -55,6 +56,9 @@
     "mocha": "^8.2.1",
     "assert": "^2.0.0",
     "tslib": "^2.0.3"
+  },
+  "bugs": {
+    "url": "https://github.com/nyan-left/trade-volume-scraper/issues"
   },
   "dependencies": {
     "axios": "^0.21.0",
