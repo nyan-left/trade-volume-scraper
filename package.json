@@ -57,6 +57,7 @@
     "tslib": "^2.0.3"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "user-agents": "^1.0.559"
