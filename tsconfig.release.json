@@ -5,7 +5,9 @@
     "outDir": "build",
     "declaration": true,
     "module": "commonjs",
-    "removeComments": true
+    "target": "ES6",
+    "removeComments": true,
+    "strict": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
