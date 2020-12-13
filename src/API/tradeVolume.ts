@@ -1,3 +1,4 @@
+import { PROXY } from './../index';
 import axios from 'axios';
 import * as _ from 'lodash';
 import * as moment from 'moment';
@@ -7,7 +8,7 @@ import { Day, FullItemData } from '../spec';
 
 function getItemUrl(ID: number, item_name: string): string {
   item_name = item_name.replace(' ', '+');
-  return `http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
+  return `${PROXY}http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
 }
 
 const parseHTML = (html: string): Day[] => {

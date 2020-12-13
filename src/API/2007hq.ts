@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as moment from 'moment';
 import { HQ2007Prices, HQData } from '../spec';
-import { getFromOfficialAPI } from '../index';
+import { getFromOfficialAPI, PROXY } from '../index';
 
 const hq2007API = async (itemID: number): Promise<HQData[]> => {
   const itemDetails = await getFromOfficialAPI(itemID);
@@ -10,7 +10,7 @@ const hq2007API = async (itemID: number): Promise<HQData[]> => {
   // todo - more edge cases
 
   const json = await axios.get(
-    `https://ge.2007hq.com/item/${itemID}/${itemDetails.name}/graph`,
+    `${PROXY}https://ge.2007hq.com/item/${itemID}/${itemDetails.name}/graph`,
   );
   const item = (json.data as unknown) as HQ2007Prices;
 
