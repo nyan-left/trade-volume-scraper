@@ -60,9 +60,18 @@ const tradeVolume = async (id: number): Promise<FullItemData> => {
   const item = await getFromOfficialAPI(id);
   const url = getItemUrl(item.id, item.name);
   const userAgent = new UserAgent();
-  const rawHTML = (
-    await axios.get(url, { headers: { 'User-Agent': userAgent.toString() } })
-  ).data;
+
+  let rawHTML: any;
+
+  // browser will shout at us if we try to set it's user agent.
+  if (typeof window === 'undefined') {
+    rawHTML = (
+      await axios.get(url, { headers: { 'User-Agent': userAgent.toString() } })
+    ).data;
+  } else {
+    rawHTML = (await axios.get(url)).data;
+  }
+
   const tradeVolume = parseHTML(rawHTML);
 
   return tradeVolume;
