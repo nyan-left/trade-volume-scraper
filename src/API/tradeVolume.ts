@@ -1,14 +1,14 @@
-import { PROXY } from './../index';
 import axios from 'axios';
 import * as _ from 'lodash';
 import * as moment from 'moment';
 import * as UserAgent from 'user-agents';
 import { getFromOfficialAPI } from '../index';
 import { Day, FullItemData } from '../spec';
+import proxyURL from './proxy';
 
 function getItemUrl(ID: number, item_name: string): string {
   item_name = item_name.replace(' ', '+');
-  return `${PROXY}http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
+  return `${proxyURL}http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
 }
 
 const parseHTML = (html: string): Day[] => {
@@ -60,9 +60,18 @@ const tradeVolume = async (id: number): Promise<FullItemData> => {
   const item = await getFromOfficialAPI(id);
   const url = getItemUrl(item.id, item.name);
   const userAgent = new UserAgent();
-  const rawHTML = (
-    await axios.get(url, { headers: { 'User-Agent': userAgent.toString() } })
-  ).data;
+
+  let rawHTML: any;
+
+  // browser will shout at us if we try to set it's user agent.
+  if (typeof window === 'undefined') {
+    rawHTML = (
+      await axios.get(url, { headers: { 'User-Agent': userAgent.toString() } })
+    ).data;
+  } else {
+    rawHTML = (await axios.get(url)).data;
+  }
+
   const tradeVolume = parseHTML(rawHTML);
 
   return tradeVolume;

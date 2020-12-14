@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.0] - 2020-12-14
+
+### Added
+
+- Browser support via CORS proxy.
+- Browser development tests.
+
+### Changed
+
+- Fixed `getTradeVolume` returning an array containing duplicates.
+- Updated dependencies.
+- Removed travis ci.
+- Removed `2007HQ` key from `getTradeVolume`.
+- Added repo url to `package.json`
+
 ## [0.0.8] - 2020-12-13
 
 ### Changed
