@@ -1,8 +1,6 @@
 <h1 align="center">Old School RuneScape Trade Stats</h1>
 
-> Node web scraper used to extract trade volume data from OldSchool Runescape Grand Exchange
-
-<div align="center">🚀  This package is still early in it's development 🚀</div>
+> Node library used to extract trade volume data from OldSchool Runescape Grand Exchange
 
 # Importing the library
 
@@ -47,6 +45,8 @@ output:
 ## Getting Data
 
 > :warning: **Do not spam requests to the APIs**: The services may time you out!
+
+<i>When running in the browser, this library uses a CORS proxy to fetch data from OldSchool RuneScape website. This has a limitation of 10 requests per second. </i>
 
 ### Trade Volume Data (OSRS's grand exchange graphs)
 
