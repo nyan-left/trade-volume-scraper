@@ -13,8 +13,8 @@ All notable changes to this project will be documented in this file.
 
 - User agent is only generated if not running on a browser.
 - `README.md` mention proxy limitations.
-- Update `SECURITY.md`
-- Removed `PROXY` export
+- Update `SECURITY.md`.
+- Removed `PROXY` export.
 
 ## [0.0.8] - 2020-12-13
 
