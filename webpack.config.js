@@ -1,46 +1,40 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const main = [
+  './tests/web.ts'
+];
+
 module.exports = {
+  context: process.cwd(), // to automatically find tsconfig.json
   entry: {
-    webTest: "./tests/web.ts",
+    main
   },
-  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'test-dist'),
-    filename: "[name].js",
-    path: __dirname + 'test-dist'
+    filename: '[name].js',
+    publicPath: "/"
   },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
-  },
-  plugins: [new HtmlWebpackPlugin({
-    template: './tests/index.html',
-    filename: 'web.html',
-    chunks: ['webTest']
-  })],
-  devServer: {
-    contentBase: './test-dist',
-    publicPath: '/test-dist',
-    open: true,
-    hot: true,
-
-  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: 'tests/index.html'
+    }),
+  ],
   module: {
     rules: [{
-      test: /\.tsx?$/,
-      loader: "ts-loader",
-      exclude: [
-        /node_modules/,
-        /\.d\.ts$/
-      ],
-      options: {
-        transpileOnly: true,
-        experimentalWatchApi: true,
-      }
-    }, ]
+      test: /.tsx?$/,
+      loader: require.resolve("ts-loader"),
+    }]
   },
-  optimization: {
-    runtimeChunk: true,
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    clientLogLevel: 'warning',
+    open: true,
+    historyApiFallback: true,
+    stats: 'errors-only'
   }
 };

@@ -14,7 +14,7 @@
     "build:watch": "tsc -w -p tsconfig.release.json",
     "lint": "eslint ./src --ext .ts,.tsx",
     "test": "ts-mocha -p tsconfig.json tests/test.ts --timeout 10000",
-    "web-tests": "node_modules/.bin/webpack --config=webpack.config.js --mode=development && node_modules/.bin/webpack serve --config=webpack.config.js"
+    "web-tests": "webpack-dev-server --progress --color --mode development --config webpack.config.js"
   },
   "files": [
     "README.md",
@@ -59,8 +59,8 @@
     "tslib": "^2.0.3",
     "tsutils": "^3.17.1",
     "typescript": "^4.1.3",
-    "webpack": "^5.10.1",
-    "webpack-cli": "^4.2.0",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
     "webpack-dev-server": "^3.11.0"
   },
   "bugs": {
