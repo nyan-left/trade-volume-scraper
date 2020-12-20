@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2020-12-2020
+
+### Added
+
+- Wiki api accessible with `OSRS.getFromWiki`
+
+### Changed
+
+- Updated `README.md`
+- Removed `moment` dependency in favor of `src/util/time.ts` for date formatting.
+- eslint prettier updated.
+- npm description changes.
+
+## [0.1.1] - 2020-12-2020
+
+### Added
+
+### Changed
+
+- Changed proxy provider
+
 ## [0.1.1] - 2020-12-18
 
 ### Added
@@ -9,7 +30,6 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Dependencies updated.
-
 
 ## [0.1.0] - 2020-12-14
 
