@@ -3,7 +3,7 @@ let proxyURL;
 if (typeof window === 'undefined') {
   proxyURL = '';
 } else {
-  proxyURL = 'https://thingproxy.freeboard.io/fetch/';
+  proxyURL = 'https://cors-anywhere.herokuapp.com/';
 }
 
 export default proxyURL;
