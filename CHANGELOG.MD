@@ -12,8 +12,10 @@ All notable changes to this project will be documented in this file.
 
 - Updated `README.md`
 - Removed `moment` dependency in favor of `src/util/time.ts` for date formatting.
-- eslint prettier updated.
-- npm description changes.
+- ESLINT -Prettier updated.
+- NPM description changes.
+- Fixed mocha tests.
+- Table of contents automatically updated when deploying to npm.
 
 ## [0.1.1] - 2020-12-20
 
