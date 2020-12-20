@@ -1,8 +1,8 @@
 import axios from 'axios';
-import * as moment from 'moment';
 import { HQ2007Prices, HQData } from '../spec';
 import { getFromOfficialAPI } from '../index';
 import proxyURL from './proxy';
+import { dateToString } from '../util/time';
 
 const hq2007API = async (itemID: number): Promise<HQData[]> => {
   const itemDetails = await getFromOfficialAPI(itemID);
@@ -20,7 +20,7 @@ const hq2007API = async (itemID: number): Promise<HQData[]> => {
   for (let i = 0; i < item.averages.length; i++) {
     data.push({
       date: item.prices[i][0],
-      dateString: moment(item.prices[i][0]).format('l'),
+      dateString: dateToString(item.prices[i][0]),
       priceDaily: item.prices[i][1],
       priceAverage: item.averages[i][1],
     });

@@ -1,10 +1,10 @@
 import axios from 'axios';
 import * as _ from 'lodash';
-import * as moment from 'moment';
 import * as UserAgent from 'user-agents';
 import { getFromOfficialAPI } from '../index';
 import { Day, FullItemData } from '../spec';
 import proxyURL from './proxy';
+import { dateToString } from '../util/time';
 
 function getItemUrl(ID: number, item_name: string): string {
   item_name = item_name.replace(' ', '+');
@@ -40,7 +40,7 @@ const parseHTML = (html: string): Day[] => {
     data.push({
       tradeVolume: volume[i][1],
       date: volume[i][0],
-      dateString: moment(volume[i][0]).format('l'),
+      dateString: dateToString(volume[i][0]),
       priceAverage: average[i][2],
       priceDaily: average[i][1],
     });

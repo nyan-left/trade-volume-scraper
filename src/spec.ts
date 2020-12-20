@@ -34,3 +34,10 @@ export type HQData = {
   priceDaily: number;
   priceAverage: number;
 };
+
+export type WikiData = {
+  date: Date;
+  dateString: string;
+  priceDaily: number;
+  tradeVolume?: number;
+};

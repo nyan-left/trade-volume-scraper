@@ -115,7 +115,7 @@ Output:
 }
 ```
 
-### Long term trade data (2007HQ API)
+### 2007HQ API
 
 This library does not contain trade volume data older than the last 180 days. It can however, fetch long term daily and average item prices from 2007HQ's API.
 
@@ -140,4 +140,40 @@ Output:
     priceDaily: 2590791,
     priceAverage: 2520593
   },// ... 1792 more items
+```
+
+### OSRS Wiki API
+
+Get long term trading data from the wiki.
+
+```ts
+const tradeData = await OSRS.getFromWiki(4151);
+console.log(tradeData); // tradeVolume undefined as tracking began in 2018
+console.log(tradeData[tradeData.length - 10]); // this should have some tradeVolume data
+```
+
+Output:
+
+```ts
+// ...
+  { // Old data
+    date: 1430006400000,
+    dateString: '04/26/2015',
+    priceDaily: 2488963,
+    tradeVolume: undefined
+  },
+  {
+    date: 1430092800000,
+    dateString: '04/27/2015',
+    priceDaily: 2571803,
+    tradeVolume: undefined
+  }, // ... 1980 more times
+
+
+{ // More recent data
+  date: 1607644800000,
+  dateString: '12/11/2020',
+  priceDaily: 2908135,
+  tradeVolume: 8743
+}
 ```
