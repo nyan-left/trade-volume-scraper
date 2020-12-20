@@ -13,16 +13,19 @@ import * as OSRS from 'osrs-trade-stats';
 ## Table Of Contents
 
 <!--ts-->
+   * [Old School RuneScape Trade Stats](#old-school-runescape-trade-stats)
+   * [Importing the library](#importing-the-library)
+      * [Using NPM](#using-npm)
+      * [Table Of Contents](#table-of-contents)
+   * [Usage](#usage)
+      * [Getting item IDs used for queries](#getting-item-ids-used-for-queries)
+      * [Getting Data](#getting-data)
+         * [Trade Volume Data (OSRS's grand exchange graphs)](#trade-volume-data-osrss-grand-exchange-graphs)
+         * [Official OSRS API](#official-osrs-api)
+         * [2007HQ API](#2007hq-api)
+         * [OSRS Wiki API](#osrs-wiki-api)
 
-- [Importing the library](#importing-the-library)
-  - [Using NPM](#using-npm)
-  - [Table Of Contents](#table-of-contents)
-- [Usage](#usage)
-  - [Getting item IDs used for queries](#getting-item-ids-used-for-queries)
-  - [Getting Data](#getting-data)
-    - [Trade Volume Data (OSRS's grand exchange graphs)](#trade-volume-data-osrss-grand-exchange-graphs)
-    - [Official OSRS API](#official-osrs-api)
-    - [Long term trade data (2007HQ API)](#long-term-trade-data-2007hq-api)
+<!-- Added by: deim, at: Sun Dec 20 05:30:20 GMT 2020 -->
 
 <!--te-->
 

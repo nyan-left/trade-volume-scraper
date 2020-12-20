@@ -20,7 +20,7 @@ const hq2007API = async (itemID: number): Promise<HQData[]> => {
   for (let i = 0; i < item.averages.length; i++) {
     data.push({
       date: item.prices[i][0],
-      dateString: dateToString(item.prices[i][0]),
+      dateString: dateToString(new Date(item.prices[i][0])),
       priceDaily: item.prices[i][1],
       priceAverage: item.averages[i][1],
     });

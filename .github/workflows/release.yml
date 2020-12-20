@@ -25,6 +25,8 @@ jobs:
       - run: npm version ${{ github.event.release.tag_name }}
       # build the project
       - run: npm run build
+      - run: bash ./gh-md-toc.sh --insert README.md
+      # update table of contents
       - run: npm test
       - run: npm publish
         env:

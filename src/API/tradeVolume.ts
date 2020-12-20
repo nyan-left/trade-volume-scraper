@@ -40,7 +40,7 @@ const parseHTML = (html: string): Day[] => {
     data.push({
       tradeVolume: volume[i][1],
       date: volume[i][0],
-      dateString: dateToString(volume[i][0]),
+      dateString: dateToString(new Date(volume[i][0])),
       priceAverage: average[i][2],
       priceDaily: average[i][1],
     });
