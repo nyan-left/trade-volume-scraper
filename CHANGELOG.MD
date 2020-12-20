@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.2.0] - 2020-12-2020
+## [0.2.0] - 2020-12-20
 
 ### Added
 
@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file.
 - eslint prettier updated.
 - npm description changes.
 
-## [0.1.1] - 2020-12-2020
+## [0.1.1] - 2020-12-20
 
 ### Added
 
