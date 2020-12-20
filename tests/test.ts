@@ -18,7 +18,6 @@ describe('#getTradeVolume API', () => {
 describe('#Wiki API', () => {
   it('Wiki api resolves over a thousand entries', async () => {
     const itemData = await API.getFromWiki(API.ITEMS_LIST.Abyssal_whip);
-    console.log(itemData[itemData.length - 10]);
     chai.expect(itemData).to.have.length.greaterThan(1000);
   });
 });

@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2020-12-20
+
+### Added
+
+### Changed
+
+- `date` property found in timeseries returned from `getFromWiki` is now typeof Date.
+
 ## [0.2.0] - 2020-12-20
 
 ### Added

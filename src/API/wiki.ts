@@ -13,7 +13,7 @@ const wikiAPI = async (itemId: number): Promise<WikiData[]> => {
 
   return items.map((item) => {
     return {
-      date: item[0],
+      date: new Date(item[0]),
       dateString: dateToString(new Date(item[0])),
       priceDaily: item[1],
       tradeVolume: item[2],
