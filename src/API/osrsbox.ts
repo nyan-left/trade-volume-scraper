@@ -2,9 +2,12 @@
 import axios from 'axios';
 import { osrsBoxResponse } from '../spec';
 
-const osrsBox = async (itemId: number): Promise<osrsBoxResponse> => {
+const osrsBox = async (
+  itemId: number,
+  proxy?: string,
+): Promise<osrsBoxResponse> => {
   const json = await axios.get(
-    `https://www.osrsbox.com/osrsbox-db/items-json/${itemId}.json`,
+    `${proxy}https://www.osrsbox.com/osrsbox-db/items-json/${itemId}.json`,
   );
 
   const item = (json.data as unknown) as osrsBoxResponse;

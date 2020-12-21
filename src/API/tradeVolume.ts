@@ -5,9 +5,9 @@ import { getFromOfficialAPI } from '../index';
 import { Day, FullItemData } from '../spec';
 import { dateToString } from '../util/time';
 
-function getItemUrl(ID: number, item_name: string): string {
+function getItemUrl(ID: number, item_name: string, proxy?: string): string {
   item_name = item_name.replace(' ', '+');
-  return `http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
+  return `${proxy}http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
 }
 
 const parseHTML = (html: string): Day[] => {

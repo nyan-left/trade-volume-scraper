@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { OfficialAPIItem } from '../spec';
 
-const officialAPI = async (itemId: number): Promise<OfficialAPIItem> => {
+const officialAPI = async (
+  itemId: number,
+  proxy?: string,
+): Promise<OfficialAPIItem> => {
   const json = await axios.get(
-    `https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=${itemId}`,
+    `${proxy}https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=${itemId}`,
   );
 
   const item = (json.data.item as unknown) as OfficialAPIItem;
