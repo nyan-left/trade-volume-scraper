@@ -41,3 +41,38 @@ export type WikiData = {
   priceDaily: number;
   tradeVolume?: number;
 };
+
+export interface osrsBoxResponse {
+  id: number;
+  name: string;
+  incomplete: boolean;
+  members: boolean;
+  tradeable: boolean;
+  tradeable_on_ge: boolean;
+  stackable: boolean;
+  stacked?: any;
+  noted: boolean;
+  noteable: boolean;
+  linked_id_item?: any;
+  linked_id_noted?: any;
+  linked_id_placeholder: number;
+  placeholder: boolean;
+  equipable: boolean;
+  equipable_by_player: boolean;
+  equipable_weapon: boolean;
+  cost: number;
+  lowalch: number;
+  highalch: number;
+  weight: number;
+  buy_limit: number;
+  quest_item: boolean;
+  release_date: string;
+  duplicate: boolean;
+  examine: string;
+  icon: string;
+  wiki_name: string;
+  wiki_url: string;
+  wiki_exchange: string;
+  equipment?: any;
+  weapon?: any;
+}
