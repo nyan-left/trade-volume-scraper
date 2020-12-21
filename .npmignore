@@ -1,0 +1,9 @@
+.github
+node_modules
+src
+*.tgz
+package-lock.json
+.*
+*.lock
+tsconfig.json
+*.log

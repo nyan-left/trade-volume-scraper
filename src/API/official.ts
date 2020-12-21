@@ -3,7 +3,7 @@ import { OfficialAPIItem } from '../spec';
 
 const officialAPI = async (
   itemId: number,
-  proxy?: string,
+  proxy = '',
 ): Promise<OfficialAPIItem> => {
   const json = await axios.get(
     `${proxy}https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=${itemId}`,

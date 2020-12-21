@@ -4,7 +4,7 @@ import { dateToString } from '../util/time';
 type wikiItem = [Date, number, number?];
 type wikiItems = wikiItem[];
 
-const wikiAPI = async (itemId: number, proxy?: string): Promise<WikiData[]> => {
+const wikiAPI = async (itemId: number, proxy = ''): Promise<WikiData[]> => {
   const json = await axios.get(
     `${proxy}https://api.weirdgloop.org/exchange/history/osrs/all?compress=true&id=${itemId}`,
   );

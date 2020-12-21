@@ -5,7 +5,7 @@ import { getFromOfficialAPI } from '../index';
 import { Day, FullItemData } from '../spec';
 import { dateToString } from '../util/time';
 
-function getItemUrl(ID: number, item_name: string, proxy?: string): string {
+function getItemUrl(ID: number, item_name: string, proxy = ''): string {
   item_name = item_name.replace(' ', '+');
   return `${proxy}http://services.runescape.com/m=itemdb_oldschool/${item_name}/viewitem?obj=${ID}`;
 }
