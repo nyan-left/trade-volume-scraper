@@ -1,7 +1,7 @@
 {
   "name": "osrs-trade-stats",
   "description": "A simple, typed API for Grand Exchange. Includes daily trade volume data. Wiki | Official API | 2007HQ | Scraped trade volume",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "engines": {
     "node": ">= 14.15 <15"
   },
