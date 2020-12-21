@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.3] - 2020-12-21
+
+### Fixed
+
+- `Proxy` url now has default value of `''`. (Fixes `undefined` issue).
+
 ## [0.2.2] - 2020-12-21
 
 ### Added

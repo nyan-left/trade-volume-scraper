@@ -3,7 +3,7 @@ import { HQ2007Prices, HQData } from '../spec';
 import { getFromOfficialAPI } from '../index';
 import { dateToString } from '../util/time';
 
-const hq2007API = async (itemID: number, proxy?: string): Promise<HQData[]> => {
+const hq2007API = async (itemID: number, proxy = ''): Promise<HQData[]> => {
   const itemDetails = await getFromOfficialAPI(itemID);
   itemDetails.name.replace('_', '-');
   itemDetails.name.toLowerCase();
