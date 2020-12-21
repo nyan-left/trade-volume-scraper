@@ -13,17 +13,18 @@ import * as OSRS from 'osrs-trade-stats';
 ## Table Of Contents
 
 <!--ts-->
-   * [Old School RuneScape Trade Stats](#old-school-runescape-trade-stats)
-   * [Importing the library](#importing-the-library)
-      * [Using NPM](#using-npm)
-      * [Table Of Contents](#table-of-contents)
-   * [Usage](#usage)
-      * [Getting item IDs used for queries](#getting-item-ids-used-for-queries)
-      * [Getting Data](#getting-data)
-         * [Trade Volume Data (OSRS's grand exchange graphs)](#trade-volume-data-osrss-grand-exchange-graphs)
-         * [Official OSRS API](#official-osrs-api)
-         * [2007HQ API](#2007hq-api)
-         * [OSRS Wiki API](#osrs-wiki-api)
+
+- [Old School RuneScape Trade Stats](#old-school-runescape-trade-stats)
+- [Importing the library](#importing-the-library)
+  - [Using NPM](#using-npm)
+  - [Table Of Contents](#table-of-contents)
+- [Usage](#usage)
+  - [Getting item IDs used for queries](#getting-item-ids-used-for-queries)
+  - [Getting Data](#getting-data)
+    - [Trade Volume Data (OSRS's grand exchange graphs)](#trade-volume-data-osrss-grand-exchange-graphs)
+    - [Official OSRS API](#official-osrs-api)
+    - [2007HQ API](#2007hq-api)
+    - [OSRS Wiki API](#osrs-wiki-api)
 
 <!-- Added by: deim, at: Sun Dec 20 05:30:20 GMT 2020 -->
 
@@ -180,3 +181,83 @@ Output:
   tradeVolume: 8743
 }
 ```
+
+### osrsbox API
+
+```ts
+const tradeData = await OSRS.getFromOsrsBox(4151);
+console.log(tradeData);
+```
+
+Output:
+
+```ts
+{
+  id: 4151,
+  name: 'Abyssal whip',
+  incomplete: false,
+  members: true,
+  tradeable: true,
+  tradeable_on_ge: true,
+  stackable: false,
+  stacked: null,
+  noted: false,
+  noteable: true,
+  linked_id_item: null,
+  linked_id_noted: 4152,
+  linked_id_placeholder: 14032,
+  placeholder: false,
+  equipable: true,
+  equipable_by_player: true,
+  equipable_weapon: true,
+  cost: 120001,
+  lowalch: 48000,
+  highalch: 72000,
+  weight: 0.453,
+  buy_limit: 70,
+  quest_item: false,
+  release_date: '2005-01-26',
+  duplicate: false,
+  examine: 'A weapon from the abyss.',
+  icon: 'iVBORw0KGgoAAAANSUhEUg', // ...
+  wiki_name: 'Abyssal whip',
+  wiki_url: 'https://oldschool.runescape.wiki/w/Abyssal_whip',
+  wiki_exchange: 'https://oldschool.runescape.wiki/w/Exchange:Abyssal_whip',
+  equipment: {
+    attack_stab: 0,
+    attack_slash: 82,
+    attack_crush: 0,
+    attack_magic: 0,
+    attack_ranged: 0,
+    defence_stab: 0,
+    defence_slash: 0,
+    defence_crush: 0,
+    defence_magic: 0,
+    defence_ranged: 0,
+    melee_strength: 82,
+    ranged_strength: 0,
+    magic_damage: 0,
+    prayer: 0,
+    slot: 'weapon',
+    requirements: { attack: 70 }
+  },
+  weapon: {
+    attack_speed: 4,
+    weapon_type: 'whips',
+    stances: [ [Object], [Object], [Object] ]
+  }
+}
+```
+
+## CORS
+
+Some of the endpoints may require a cors proxy, such as [cors anywhere](https://github.com/Rob--W/cors-anywhere). To supply this to, simply pass it in as a parameter.
+
+```ts
+const tradeData = await API.getTradeVolume(
+  4151,
+  'https://cors-anywhere.herokuapp.com/',
+);
+```
+
+This should now work in the browser.

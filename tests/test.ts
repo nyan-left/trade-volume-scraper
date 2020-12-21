@@ -25,6 +25,7 @@ describe('#Wiki API', () => {
 describe('#osrsbox API', () => {
   it('item 4151 resolves name Abyssal whip', async () => {
     const itemData = await API.getFromOsrsBox(API.ITEMS_LIST.Abyssal_whip);
+    console.log(itemData);
     chai.expect(itemData.name).to.equal('Abyssal whip');
   });
 });
