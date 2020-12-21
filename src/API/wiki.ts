@@ -1,13 +1,12 @@
 import axios from 'axios';
 import { WikiData } from '../spec';
 import { dateToString } from '../util/time';
-import proxyURL from './proxy';
 type wikiItem = [Date, number, number?];
 type wikiItems = wikiItem[];
 
 const wikiAPI = async (itemId: number): Promise<WikiData[]> => {
   const json = await axios.get(
-    `${proxyURL}https://api.weirdgloop.org/exchange/history/osrs/all?compress=true&id=${itemId}`,
+    `https://api.weirdgloop.org/exchange/history/osrs/all?compress=true&id=${itemId}`,
   );
   const items = (json.data as unknown)[itemId] as wikiItems;
 
