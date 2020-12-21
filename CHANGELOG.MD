@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2020-12-21
+
+### Added
+
+- Optional `Proxy` parameter for API calls.
+- OSRSbox API support.
+- Readme section about `CORS` and OSRSbox.
+
+### Changed
+
+- CORS proxy no longer assigned automatically when running in browsers.
+
 ## [0.2.1] - 2020-12-20
 
 ### Added
