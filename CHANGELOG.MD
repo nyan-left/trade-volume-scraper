@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.5] - 2021-01-09
+
+### Changed
+
+- No longer running tests for osrsbox as it seems to be down.
+- Noted the above in `README.md`.
+- Dependencies updated.
+
+### Fixed
+
+- Builds now pass, ignoring osrsbox.
+
 ## [0.2.3] - 2020-12-21
 
 ### Fixed

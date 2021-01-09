@@ -50,8 +50,6 @@ output:
 
 > :warning: **Do not spam requests to the APIs**: The services may time you out!
 
-<i>When running in the browser, this library uses a CORS proxy to fetch data from OldSchool RuneScape website. This has a limitation of 10 requests per second. </i>
-
 ### Trade Volume Data (OSRS's grand exchange graphs)
 
 (Not available on the official OSRS API)
@@ -117,33 +115,6 @@ Output:
   day90: { trend: 'positive', change: '+9.0%' },
   day180: { trend: 'positive', change: '+1.0%' }
 }
-```
-
-### 2007HQ API
-
-This library does not contain trade volume data older than the last 180 days. It can however, fetch long term daily and average item prices from 2007HQ's API.
-
-```ts
-const tradeData = await OSRS.getFrom2007HQ(4151);
-console.log(tradeData);
-```
-
-Output:
-
-```ts
-// ...
-  {
-    date: 1431820800000,
-    dateString: '5/17/2015',
-    priceDaily: 2587970,
-    priceAverage: 2511047
-  },
-  {
-    date: 1431907200000,
-    dateString: '5/18/2015',
-    priceDaily: 2590791,
-    priceAverage: 2520593
-  },// ... 1792 more items
 ```
 
 ### OSRS Wiki API
@@ -247,6 +218,35 @@ Output:
     stances: [ [Object], [Object], [Object] ]
   }
 }
+```
+
+### 2007HQ API
+
+> Seems to be currently down
+
+This library does not contain trade volume data older than the last 180 days. It can however, fetch long term daily and average item prices from 2007HQ's API.
+
+```ts
+const tradeData = await OSRS.getFrom2007HQ(4151);
+console.log(tradeData);
+```
+
+Output:
+
+```ts
+// ...
+  {
+    date: 1431820800000,
+    dateString: '5/17/2015',
+    priceDaily: 2587970,
+    priceAverage: 2511047
+  },
+  {
+    date: 1431907200000,
+    dateString: '5/18/2015',
+    priceDaily: 2590791,
+    priceAverage: 2520593
+  },// ... 1792 more items
 ```
 
 ## CORS
