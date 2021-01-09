@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- No longer running tests for osrsbox as it seems to be down.
+- No longer running tests for 2007hq as it seems to be down.
 - Noted the above in `README.md`.
 - Dependencies updated.
 
