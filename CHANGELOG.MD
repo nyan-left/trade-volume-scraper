@@ -6,13 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- No longer running tests for 2007hq as it seems to be down.
-- Noted the above in `README.md`.
 - Dependencies updated.
+- `README.md` updated
 
 ### Fixed
 
-- Builds now pass, ignoring osrsbox.
+- Ignore 2007hq tests as it's currently down.
 
 ## [0.2.3] - 2020-12-21
 
