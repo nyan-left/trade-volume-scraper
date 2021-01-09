@@ -1,8 +1,8 @@
 import axios from 'axios';
-import * as _ from 'lodash';
 import * as UserAgent from 'user-agents';
 import { getFromOfficialAPI } from '../index';
 import { Day, FullItemData } from '../spec';
+import arrToSortedUnique from '../util/array';
 import { dateToString } from '../util/time';
 
 function getItemUrl(ID: number, item_name: string, proxy = ''): string {
@@ -48,19 +48,12 @@ const parseHTML = (html: string): Day[] => {
   return data;
 };
 
-const arrToSortedUnique = (
-  array: [Date, number, number?][],
-): [Date, number, number?][] =>
-  _.uniqBy(array, (v) => v[0].toString()).sort(
-    (a: unknown, b: unknown) => a[0] - b[0],
-  );
-
 const tradeVolume = async (id: number): Promise<FullItemData> => {
   const item = await getFromOfficialAPI(id);
   const url = getItemUrl(item.id, item.name);
   const userAgent = new UserAgent();
 
-  let rawHTML: any;
+  let rawHTML: string;
 
   // browser will shout at us if we try to set it's user agent.
   if (typeof window === 'undefined') {
@@ -68,6 +61,7 @@ const tradeVolume = async (id: number): Promise<FullItemData> => {
       await axios.get(url, { headers: { 'User-Agent': userAgent.toString() } })
     ).data;
   } else {
+    // todo : use fetch if available
     rawHTML = (await axios.get(url)).data;
   }
 
