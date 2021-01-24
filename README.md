@@ -220,35 +220,6 @@ Output:
 }
 ```
 
-### 2007HQ API
-
-> Seems to be currently down
-
-This library does not contain trade volume data older than the last 180 days. It can however, fetch long term daily and average item prices from 2007HQ's API.
-
-```ts
-const tradeData = await OSRS.getFrom2007HQ(4151);
-console.log(tradeData);
-```
-
-Output:
-
-```ts
-// ...
-  {
-    date: 1431820800000,
-    dateString: '5/17/2015',
-    priceDaily: 2587970,
-    priceAverage: 2511047
-  },
-  {
-    date: 1431907200000,
-    dateString: '5/18/2015',
-    priceDaily: 2590791,
-    priceAverage: 2520593
-  },// ... 1792 more items
-```
-
 ## CORS
 
 Some of the endpoints may require a cors proxy, such as [cors anywhere](https://github.com/Rob--W/cors-anywhere). To supply this to, simply pass it in as a parameter.

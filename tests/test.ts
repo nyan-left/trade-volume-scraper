@@ -43,11 +43,3 @@ describe('#getTradeVolume API', () => {
       );
   });
 });
-
-describe('#2007hq API', () => {
-  xit('resolves', async () => {
-    // temp skip as osrsbox is down
-    const tradeData = await API.getFrom2007HQ(4151);
-    chai.expect(tradeData).to.have.length;
-  });
-});
