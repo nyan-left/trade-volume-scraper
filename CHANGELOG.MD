@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.6] - 2021-01-24
+
+### Changed
+
+- Removed `2007HQ` API as the website/API seems to be permanently down.
+
 ## [0.2.5] - 2021-01-09
 
 ### Changed
