@@ -1,6 +1,6 @@
 <h1 align="center">Old School RuneScape Trade Stats</h1>
 
-> Node library used to extract trade volume data from OldSchool Runescape Grand Exchange
+> Node library which scrapes trade volume from the official grand exchange page, alongside wrapping around common APIs.
 
 # Importing the library
 
